@@ -1,6 +1,6 @@
-Utilizando el operador condicional ? : 
+<!-- Utilizando el operador condicional ? : 
 introduce la edad
-y de resultado si es o no mayor de edad (18)
+y de resultado si es o no mayor de edad (18) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +9,17 @@ y de resultado si es o no mayor de edad (18)
     <title>Ejercicio2</title>
 </head>
 <body>
+    <h2>Ejercicio2</h2>
     
+    <input id="edad" type="number" value="0">
+    <button onclick="mayorEdad()">Enviar</button>
+    <p id="resultado"> Resultado </p>
+    <script>
+        function mayorEdad(){
+            let edad = parseInt(document.getElementById("edad").value);
+            let resultado = edad >= 18 ? "Felicidades eres mayor de edad" : "Todavía no eres mayor de edad";
+            document.getElementById("resultado").innerHTML= "El resultado es: " + resultado;
+        }
+    </script>
 </body>
 </html>
