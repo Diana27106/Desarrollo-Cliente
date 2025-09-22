@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio5</title>
+</head>
+<body>
+    <div>
+        <h1>Contador Regresivo</h1>
+        <p>Introduce un número para iniciar el contador.</p>
+        <script>
+            // Pedir al usuario un número
+            let countdown = prompt("Introduce un número para iniciar la cuenta atrás");
+            countdown = parseInt(countdown);
+
+                while (countdown > 0) {
+                    // Mostramos el número actual en una alerta.
+                    alert(countdown + "...")
+                    // Restamos el contador cada pasada uno hasta llegar a 0.
+                    countdown--;
+                    //countdown++;
+
+                    //Cuando cambiamos el contador a ++, entramos en un bucle infinito. Ya que al ir sumado 1 en cada interacción nunca va a llegar a 0 o menos. 
+                }
+        </script>
+    </div>
+</body>
+</html>

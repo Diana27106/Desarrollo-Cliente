@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio7</title>
+</head>
+<body>
+    <h1>Control Parental</h1>
+    
+    <script>
+        const respuestaCorrecta = "Suárez";
+        mostrarControlParental();
+        
+        function mostrarControlParental() {
+            while (true) {
+                // Pedir que introduzca la respuesta.
+                const respuestaUsuario = prompt("Ingrese el apellido del primer presidente español de la democracia:");
+            
+                // Comprueba si la respuesta del usuario es correcta.
+                if (respuestaUsuario == respuestaCorrecta) {
+                    break;
+                } else {
+                    // Si la respuesta es incorrecta, muestra un mensaje de error.
+                    alert("Respuesta incorrecta. Inténtalo de nuevo.");
+                }
+            }
+        }
+    </script>
+    
+</body>
+</html>
+
+
+

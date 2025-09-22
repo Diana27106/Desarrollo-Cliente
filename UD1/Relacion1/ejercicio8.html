@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio8</title>
+</head>
+<body>
+    <h1>Control Parental Versión Mejorada</h1>
+    
+    <script>
+        const nombreCorrecto = "adolfo";
+        const apellidoCorrecto = "suarez";
+        const respuestaCorrecta = "adolfo suarez";
+
+        mostrarControlParental();
+        
+        function mostrarControlParental() {
+            while (true) {
+                let respuestaUsuario = prompt("¿Cuál fue el primer presidente de la democracia española?");
+                
+                // Quitr espacios, pasar a minúsculas
+                respuestaUsuario = normalizar(respuestaUsuario);
+
+                if (respuestaUsuario === respuestaCorrecta) {
+                    alert("CORRECTO");
+                    break;
+                } else if (respuestaUsuario === nombreCorrecto) {
+                    alert("Te falta el apellido. ¿Cuál fue el primer presidente de la democracia española?");
+                } else if (respuestaUsuario === apellidoCorrecto) {
+                    alert("Te falta el nombre. ¿Cuál fue el primer presidente de la democracia española?");
+                } else {
+                    alert("ERROR. Inténtelo de nuevo. ¿Cuál fue el primer presidente de la democracia española?");
+                }
+            }
+        }
+
+        function normalizar(texto) {
+            return texto
+                .trim()
+                .toLowerCase()
+        }
+    </script>
+    
+</body>
+</html>
