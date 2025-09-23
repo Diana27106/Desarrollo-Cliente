@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio9</title>
+</head>
+<body>
+    <script>
+        function tieneTresDigitos(num){
+            let resultado;
+            if(num>99 && num<1000){
+                resultado = "si";
+            } else {
+                resultado = "no";
+            }
+            return resultado;
+        }
+
+        document.writeln(tieneTresDigitos(2000))
+        document.writeln(tieneTresDigitos(50))
+        document.writeln(tieneTresDigitos(200))
+    </script>
+</body>
+</html>
