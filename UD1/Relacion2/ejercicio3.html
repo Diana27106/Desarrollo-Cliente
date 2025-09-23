@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio3</title>
+</head>
+<body>
+    <script>
+        let numCol = parseInt(prompt("Introduce el número de columnas: "));
+        let altPix = parseInt(prompt("Introduce la altura en píxeles de las celdas: "));
+        let achPix = parseInt(prompt("Introduce la anchura en píxeles de las celdas: "));
+
+        document.writeln('<table border="0" cellspacing="2" bgcolor="black" width="200">');
+        document.writeln(`<tr bgcolor="white" height="${altPix}">`);
+
+        for(let i=1; i<numCol+1; i++){
+            if (i%2 == 0){
+                document.writeln('<td width="${achPix}" bgcolor = "white">&nbsp;</td>')
+            }else{
+                document.writeln('<td width="${achPix}" bgcolor = "black">&nbsp;</td>')
+            }
+            
+        }
+
+        document.writeln('<tr/>')
+        document.writeln('<table/>')
+    </script>
+</body>
+</html>

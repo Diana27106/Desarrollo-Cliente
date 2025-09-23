@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio8</title>
+</head>
+<body>
+    <script>
+        let numCol = 8;
+        let numFil = 8;
+        let altPix = parseInt(prompt("Introduce la altura en píxeles de las celdas: "));
+
+        document.writeln('<table border="0" bgcolor="black">');
+
+        for(let i=0; i<numFil; i++){
+            document.writeln(`<tr>`);
+
+            for(let j=1; j<numCol+1; j++){
+                if ((i+j)%2 == 0){
+                document.writeln(`<td width="${altPix}" height="${altPix}" bgcolor = "white">&nbsp;</td>`)
+            }else{
+                document.writeln(`<td width="${altPix}" height="${altPix}" bgcolor = "black">&nbsp;</td>`)
+            }
+            }
+        }
+        
+        document.writeln('<tr/>')
+        document.writeln('<table/>')
+    </script>
+</body>
+</html>
