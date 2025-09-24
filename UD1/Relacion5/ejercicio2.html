@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio2</title>
+</head>
+<body>
+    <script>
+        function squareAndSum (...valores){
+            let cuadrados = [];
+            let suma=0;
+
+            for (let i=0; i<valores.length; i++){
+                cuadrados[i]=valores[i]*valores[i];
+            }
+
+            for (let i=0; i<cuadrados.length; i++){
+                suma += cuadrados[i];
+            }
+            return suma;
+        }
+        document.writeln(squareAndSum(1, 2, 3))
+    </script>
+</body>
+</html>

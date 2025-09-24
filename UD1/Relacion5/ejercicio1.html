@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+</head>
+<body>
+    <script>
+        // function onlyUniques(...valores){
+        //     let arrResult = [];
+        //     for (let i=0; i<valores.length; i++){
+        //         if (!arrResult.includes(valores[i])){
+        //             arrResult.push(valores[i]);
+        //         }
+        //     }
+        //     return arrResult;
+        // }
+
+        function onlyUniques(...valores){
+            let arrResult = [];
+            
+            for (let i=0; i<valores.length; i++){
+                let estaIncluido=false;
+                for (let j=0; j<arrResult.length; j++){
+                    if(valores[i]==arrResult[j]){
+                        estaIncluido=true;
+                        break;
+                    }
+                }
+                if(estaIncluido==false){
+                    arrResult.push(valores[i])
+                }
+            }
+            return arrResult;
+        }
+
+
+        //Otra forma podría ser usar un const unicos = Set(valores) 
+        // y luego volver a convertirlo a array con Array.from(unicos)
+
+        document.writeln(onlyUniques(4, 4, 1, 2, 3, 2, 6, 6))
+
+    </script>
+</body>
+</html>
