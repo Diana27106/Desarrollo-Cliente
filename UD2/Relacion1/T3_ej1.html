@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+</head>
+<body>
+    <script>
+        //Declarar variables fechaActual, año y fechaNavidad
+        let hoy = new Date();
+        let year = new Date().getFullYear();
+        let navidad = new Date(year, 11, 19)
+
+        //Calcular los días restantes (en milisegundos)
+        let diasRestantes = navidad - hoy;
+
+        //Pasarlos a días (miliseundos > segundos > minutos > horas)
+        diasRestantes = Math.round(diasRestantes/(1000*60*60*24))
+        document.writeln("Quedan " + diasRestantes + " dias para Navidad")
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio2</title>
+</head>
+<body>
+    <script>
+        // let cumple = new Date(2006, 9, 27)
+        let cumple = new Date(prompt("Introduce tu fecha de nacimiento: YYYY-MM-DD"));
+        yearI=cumple.getFullYear();
+        let yearF = new Date(2100, 11, 30).getFullYear();
+        for (let i=yearI; i<yearF; i++){
+            if (cumple.getDay() == 0){
+                document.writeln(cumple + "<br>")
+            }
+            cumple.setFullYear(i)
+        }
+    </script>
+</body>
+</html>

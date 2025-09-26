@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio5</title>
+</head>
+<body>
+    <script>
+        let opc = parseInt(prompt("Introduce una de las siguientes opciones:\n1.Potencia\n2.Raíz\n3.Redondeo\n4.Trigonometría"));
+        switch (opc){
+            case 1:
+                let base = parseInt(prompt("Introduce la base:"))
+                let exponente = parseInt(prompt("Introduce el exponente:"))
+                let resultado = Math.pow(base, exponente);
+                document.writeln("La potencia de " + base + " elevado a " + exponente + " es: " + resultado)
+                break;
+            case 2:
+                let num = parseInt(prompt("Introduce un número no negativo: "))
+                let raiz = Math.sqrt(num);
+                document.writeln("La raiz de " + num + " es: " + raiz)
+                break;
+            case 3: 
+                let num2 = parseFloat(prompt("Introduce un número decimal: "))
+                let redondeado = Math.round(num2)
+                let alta = Math.ceil(num2)
+                let baja = Math.floor(num2)
+                document.writeln("Tu número redondeado es: " + redondeado + " hacia el más alo es " + alta + " y hacia el más bajo es " + baja)
+                break;
+            case 4:
+                let num3 = parseInt(prompt("Introduce un número del 0 al 360"))
+                //Convertirlo a radiantes
+                const radiante = num3 * (Math.PI/180)
+
+                //Calcular los valores con Math
+                let seno = Math.sin(num3);
+                let coseno = Math.cos(num3);
+                let tangente = Math.tan(num3);
+
+                document.writeln("El seno de tu triángulo es: " + seno + " el coseno es: "+ coseno + " y la tangente es: " + tangente)
+                break;
+            default:
+            break;
+        }
+    </script>
+</body>
+</html>
