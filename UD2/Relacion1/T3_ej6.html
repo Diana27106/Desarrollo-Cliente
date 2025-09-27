@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio6</title>
+</head>
+<body>
+    <script>
+        // let nombre = prompt("Introduce tu nombre y apellidos: ")
+        let nombre = "Diana Radu Giju";
+        document.writeln("El tamaño del nombre más los apellidos es de: " +  nombre.replaceAll(' ', '').length);
+        document.writeln("<p>El nombre en minusculas: " + nombre.toLowerCase() + " </p> "+ " <p>El nombre en mayusculas: " + nombre.toUpperCase() + " </p> ")
+        
+        let nomOculto = nombre.replace(/\S/g, "*")
+
+        let name = nomOculto.split(" ")
+
+        document.writeln("<p>Nombre: " + name[0] + "</p>")
+        document.writeln("<p>Apellido 1: " + name[1] + "</p>")
+        document.writeln("<p>Apellido 2: " + name[2] + "</p>")
+    </script>
+</body>
+</html>
