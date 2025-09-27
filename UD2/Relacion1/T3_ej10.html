@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio10</title>
+</head>
+
+<body>
+    <script>
+        let frase = prompt("Introduce una frase: ")
+        let contadorA = 0;
+        let contadorE = 0;
+        let contadorI = 0;
+        let contadorO = 0;
+        let contadorU = 0;
+        for (let i = 0; i < frase.length; i++) {
+            let caracter = frase.charAt(i).toLowerCase();
+            switch (caracter) {
+                case "a":
+                    contadorA++;
+                    break;
+
+                case "e":
+                    contadorE++;
+                    break;
+
+                case "i":
+                    contadorI++;
+                    break;
+
+                case "o":
+                    contadorO++;
+                    break;
+
+                case "u":
+                    contadorU++;
+                    break;
+            }
+        }
+        document.write("<p>La letra a aparece " + contadorA + "  veces </p>")
+        document.write("<p>La letra e aparece " + contadorE + "  veces </p>")
+        document.write("<p>La letra i aparece " + contadorI + "  veces </p>")
+        document.write("<p>La letra o aparece " + contadorO + "  veces </p>")
+        document.write("<p>La letra u aparece " + contadorU + "  veces </p>")
+
+    </script>
+</body>
+
+</html>
