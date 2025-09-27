@@ -1,0 +1,30 @@
+<!-- Nombre del archivo: T3_ej7.html
+Escribe un programa que pida tres números y escriba en la pantalla cuál es el mayor.
+Nombre del archivo: T3_ej8.html
+Escribe un programa que pida introducir una frase y escriba cuantas veces aparece la letra a.
+Nombre del archivo: T3_ej9.html
+Escribe un programa que pida una frase y escriba cuántas de las letras que tiene son vocales.
+Nombre del archivo: T3_ej10.html
+Escribe un programa que pida una frase y escriba cuántas veces aparecen cada una de las vocales. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio7</title>
+</head>
+<body>
+    <script>
+        let lista = [];
+        let num;
+        for (let i=0; i <3; i++){
+            num = parseInt(prompt("Introduce un número: "))
+            lista.push(num);
+        }
+        
+        let max = Math.max(...lista);
+        document.writeln("El número mayor es: " + max)
+    </script>
+</body>
+</html>

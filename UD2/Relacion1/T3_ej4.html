@@ -8,14 +8,12 @@
 <body>
     <script>
         debugger
-        let inicio = Date();
-        // let nombre = prompt("Introduce tu nombre y apellidos")
-        let nombre = "Diana Radu Giju"
-        let final = Date();
+        let inicio = new Date();
+        let nombre = prompt("Introduce tu nombre y apellidos")
+        let final = new Date();
         let tiempo = final - inicio;
         tiempo = Math.round(tiempo/1000);
-        document.writeln(tiempo)
-        document.writeln("En introducir " + nombre + " has tardado " + tiempo + "segundos")
+        document.writeln("En introducir " + nombre + " has tardado " + tiempo + " segundos")
     </script>
 </body>
 </html>
