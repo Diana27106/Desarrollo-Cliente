@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+    <h1 id="reloj"></h1>
+
+    <script>
+        function mostrarHora() {
+            let fecha = new Date();
+            let h = fecha.getHours();
+            let min = fecha.getMinutes();
+            let s = fecha.getSeconds();
+
+            document.getElementById("reloj").textContent = h + ":" + min + ":" + s;
+        }
+
+        setInterval(mostrarHora, 1000)
+
+        mostrarHora();
+    </script>
+</body>
+
+</html>
