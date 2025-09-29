@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+
+<body>
+    <p>Hemos cambiado de ubicación esta página. En breves momentos será redireccionado...</p>
+    <h2 id="contador">5</h2>
+
+    <script>
+        let tiempo = 5;
+        function restarTiempo() {
+            tiempo--;
+            document.getElementById("contador").textContent = tiempo;
+
+            if (tiempo === 0) {
+                clearInterval(intervalo);
+                window.location.href = 'https://www.pccomponentes.com';
+            }
+        }
+        let intervalo = setInterval(restarTiempo, 1000)
+    </script>
+</body>
+
+</html>

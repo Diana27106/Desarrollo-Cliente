@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ventana secundaria</title>
+</head>
+<body>
+    <p id="parrafo"></p>
+    <script>
+        function recibeMensaje(texto) {
+            var objeto = document.getElementById("parrafo");
+            objeto.innerHTML = texto;
+        }
+
+        function cerrarse() {
+            window.close();
+        }
+    </script>
+    <button onclick="cerrarse()">cerrarse</button>
+</body>
+</html>

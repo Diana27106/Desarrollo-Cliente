@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+    <!-- //         window.open()
+                // window.close()
+                // window.moveTo
+                // Objeto screen, location, navigator -->
+    <script>
+        //Pedimos el título y cramos la ventana
+        let titulo = prompt("Introduce el título para tu página:");
+        let ventana = window.open("", titulo, "width=500px, height=400px");
+
+        //La movemos arriba y a la derecha
+        ventana.moveTo(screen.width, 0 );
+        
+        ventana.document.write("<p>" + titulo + "</p>")
+        ventana.document.write('<input type="button" value="Cerrar Ventana" onclick="window.close();" />');
+    </script>
+</body>
+
+</html>
