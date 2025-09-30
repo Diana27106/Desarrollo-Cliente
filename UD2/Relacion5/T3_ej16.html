@@ -14,15 +14,19 @@
     <script>
         let ventana;
 
+        //Función para abrir la ventana secundaria
         function abrirVentana() {
             ventana = window.open("http://127.0.0.1:5501/UD2/Relacion5/ventanaSecundaria.html", "", "width=500px, height=400px");
         }
 
+        //Función para cerrar la ventana secundaria
         function cerrarVentana() {
             ventana.close()
         }
         
+        //Función enviar un mensaje. Usamos la función de ventanaSecundaria recibe mensaje y el mensajeque vamos a enviar
         function enviarMes(){
+            //Comprobamos que se haya creado la ventana y esta no esté cerrada
             if (ventana && !ventana.closed) {
                 ventana.recibeMensaje("Mensaje desde la ventana principal")
             }else{

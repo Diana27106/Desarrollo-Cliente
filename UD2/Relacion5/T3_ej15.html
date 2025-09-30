@@ -12,8 +12,8 @@
     <h2 id="contador">5</h2>
 
     <script>
-        let tiempo = 5;
-        function restarTiempo() {
+        //Crear una función que reste tiempo hasta llegar a 0 y abrir la página de pcComponentes
+        function restarTiempo(tiempo) {
             tiempo--;
             document.getElementById("contador").textContent = tiempo;
 
@@ -22,7 +22,7 @@
                 window.location.href = 'https://www.pccomponentes.com';
             }
         }
-        let intervalo = setInterval(restarTiempo, 1000)
+        let intervalo = setInterval(restarTiempo(5), 1000)
     </script>
 </body>
 

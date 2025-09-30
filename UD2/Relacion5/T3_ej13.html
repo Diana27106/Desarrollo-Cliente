@@ -10,12 +10,14 @@
     <input type="button" value="Cerrar ventana" onclick="cerrarVentana()">
     <script>
         let ventana;
-        
+
+        //Crear una función para abrir ventanas con su botón de cerrar ventana dentro
         function abrirVentana(){
             ventana = window.open("", "", "width=500px, height=400px");
             ventana.document.write('<input type="button" value="Cerrar Ventana" onclick="window.close();" />');
         }
 
+        //Crear función cerrar ventana desde la página principal
         function cerrarVentana(){
             ventana.close()
         }

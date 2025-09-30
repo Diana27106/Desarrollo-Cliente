@@ -11,6 +11,8 @@
     <p onclick="abrirVentana()">Haz click aqui</p>
     <script>
         let ventana;
+
+        //Abrir 5 ventanas emergentes con su titulo y su botón de cerrar ventana
         function abrirVentana() {
             for (let i = 1; i < 6; i++) {
                 ventana = window.open("", "", "width=350px, height=350px");

@@ -8,10 +8,6 @@
 </head>
 
 <body>
-    <!-- //         window.open()
-                // window.close()
-                // window.moveTo
-                // Objeto screen, location, navigator -->
     <script>
         //Pedimos el título y cramos la ventana
         let titulo = prompt("Introduce el título para tu página:");
@@ -20,6 +16,8 @@
         //La movemos arriba y a la derecha
         ventana.moveTo(screen.width, 0 );
         
+        //Imprimimos el título y creamos la ventana Cerrar ventana dentro de esta
+        //IMPORTANTE:usar window.close y no ventana.window.close ya que no conoce a la variable ventana
         ventana.document.write("<p>" + titulo + "</p>")
         ventana.document.write('<input type="button" value="Cerrar Ventana" onclick="window.close();" />');
     </script>
