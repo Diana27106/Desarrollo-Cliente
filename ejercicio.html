@@ -13,10 +13,11 @@
             
             if (tiempo === 0) {
                 clearInterval(intervalo);
+                window.location.href = 'https://www.google.com';
             }
             
     }
-    let intervalo = setInterval(restarTiempo, 1000)
+    let intervalo = setInterval(restarTiempo(5), 1000)
     </script>
 </body>
 </html>
