@@ -15,7 +15,7 @@
         //Abrir 5 ventanas emergentes con su titulo y su botón de cerrar ventana
         function abrirVentana() {
             for (let i = 1; i < 6; i++) {
-                ventana = window.open("", "", "width=350px, height=350px");
+                ventana = window.open("https://www.google.es", "", "width=350px, height=350px");
                 ventana.document.write('<input type="button" value="Cerrar Ventana" onclick="window.close();" />');
                 ventana.document.write('<p>ventana ' + i + '</p>')
             }

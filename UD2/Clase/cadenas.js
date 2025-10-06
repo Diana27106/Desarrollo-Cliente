@@ -1,39 +1,39 @@
-function esPalindromo(scad){
+function esPalindromo(scad) {
     let scadInversa = "";
-    for (let i=scad.length; i>=0; i--){
+    for (let i = scad.length - 1; i >= 0; i--) {
         scadInversa += scad.charAt(i);
     }
-    if (scad == scadInversa){
-        return true;
-    }else{
-        return false;
-    }
+    return scad === scadInversa;
 }
 
-function miSplit(cadena, delimitador){
+function miSplit(cadena, delimitador) {
     let arSplit = [];
-    //Hacerlo con el while y el index of y substring
+    let inicio = 0;
+    let indiceDelimitador = cadena.indexOf(delimitador, inicio);
 
-    for (let i=0; i<cadena.length; i++){
-        if (cadena[i] === delimitador){
-            arSplit.push()
-        }
+    while (indiceDelimitador !== -1) {
+        arSplit.push(cadena.substring(inicio, indiceDelimitador));
+        inicio = indiceDelimitador + delimitador.length;
+        indiceDelimitador = cadena.indexOf(delimitador, inicio);
     }
-    return arSplit
+    arSplit.push(cadena.substring(inicio));
+
+    return arSplit;
 }
 
 
-function contiene(cadena, subcadena){
-    for (let i=0; i<cadena.length-subcadena.lenght; i++){
+function contiene(cadena, subcadena) {
+    for (let i = 0; i <= cadena.length - subcadena.length; i++) {
         let encontrado = true;
-
-        for (let j=0; j<subcadena.length; j++){
-            if (cadena[i] !== subcadena[j]){
-                return true;
-                break;
+        for (let j = 0; j < subcadena.length; j++) {
+            if (cadena[i + j] !== subcadena[j]) {
+                encontrado = false;
+                break; 
             }
         }
+        if (encontrado) {
+            return true;
+        }
     }
-    return false; 
+    return false;
 }
-

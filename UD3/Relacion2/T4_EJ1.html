@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <script>
+        const sum = arNum => {
+            let suma=0;
+            for (let i=0; i<arNum.length; i++){
+                suma+=arNum[i];
+            }
+            return suma
+        }
+        const valorMedio = arNum => {return (sum(arNum)/arNum.length)}
+        let arNum = [];
+        for (let i=0; i<5; i++){
+            arNum.push(parseInt(prompt("Introduce un número: "))) ;
+        }
+
+        document.write("El valor mínimo: " + Math.min(...arNum) + "<br>")
+        document.write("El valor máximo: " + Math.max(...arNum) + "<br>")
+        document.write("El valor medio es: " + valorMedio(arNum));
+        
+
+    </script>
+</body>
+</html>
