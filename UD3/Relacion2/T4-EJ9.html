@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio9</title>
+</head>
+<body>
+    <script src="function.js"></script>
+    <script>
+        debugger
+        let cadena = prompt("Introduce una cadena: ");
+        let ventana = window.open("", "_blank", "width=700,height=500");
+        ventana.document.write("El número de palabras: " + numPalabras(cadena));
+        ventana.document.write("<br>La primera palabra es: " + primeraPalabra(cadena));
+        ventana.document.write("<br>La ultima palabra es: " + ultimaPalabra(cadena));
+        ventana.document.write("<br>El orden inverso es: " + ordenInverso(cadena));
+        ventana.document.write("<br>El orden de (a-z) es: " + ordenAsc(cadena));
+        ventana.document.write("<br>El orden de (z-a) es: " + ordenDes(cadena));
+    </script>
+</body>
+</html>

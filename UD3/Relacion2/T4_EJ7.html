@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+<body>
+    <script src="funcion.js"></script>
+    <script>
+        ar1 = [];
+        rellenarArray(ar1, 100);
+        for (let i=0; i<ar1.length; i++){
+            document.write(`El valor ${i} es ${ar1[i]} <br>`);
+        }
+
+        let arOrdenado = ar1.sort((a, b) => a - b);
+
+        let arFiltrado = arOrdenado.filter((a, i) => arOrdenado.indexOf(a) === i)
+        for (let i=0; i<arFiltrado.length; i++){
+            document.write(`El valor ${i} es ${arFiltrado[i]} <br>`);
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio8</title>
+</head>
+<body>
+    <script>
+        let nombre = prompt("Ingresa una lista de nombres: ej:Luis,Marta,Daniel, etc ");
+        let arNombres =  nombre.split(",");
+        let arOrdenado = arNombres.sort();
+        arOrdenado.forEach(el => document.write(el))
+    </script>
+</body>
+</html>

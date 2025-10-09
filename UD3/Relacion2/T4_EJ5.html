@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <script src="funcion.js"></script>
+    <script>
+        ar1 = [];
+        rellenarArray(ar1, 100);
+        for (let i=0; i<ar1.length; i++){
+            document.write(`El valor ${i} es ${ar1[i]} <br>`);
+        }
+
+        let valMin = Math.min(...ar1);
+        let valMax = Math.max(...ar1);
+        let valMedio = valorMedio(ar1)
+
+        document.write(`El valor mínimo es: ${valMin} <br> El valor máximo es: ${valMax} <br> El valor medio es: ${valMedio}`);
+    </script>
+</body>
+</html>
