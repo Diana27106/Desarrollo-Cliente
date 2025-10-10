@@ -1,28 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clase 10/10</title>
 </head>
+
 <body>
     <script>
-        let articulo = {
-            codigo: "", 
-            nombre: "",
-            precio: "",
-            muestraHtml: funtion () {
+        let articulo1 = {
+            codigo: 1,
+            nombre: "Pelota",
+            precio: 8.75,
 
-            },
-            pvp: function (){
+        }
+        let articulo2 = {
+            codigo: 2,
+            nombre: "Raquta",
+            precio: 12.5,
 
-            },
-            dto: funtion() {
+        }
+        let articulo3 = {
+            codigo: 3,
+            nombre: "Mancuernas",
+            precio: 32.99,
 
-            }
+        }
+        let articulo4 = {
+            codigo: 4,
+            nombre: "Patines",
+            precio: 47.99,
+
+        }
+        let articulo5 = {
+            codigo: 5,
+            nombre: "Casco",
+            precio: 24.99,
+
         }
 
-         const arArticulo = [5];
+        function encuentra(ar, codigo) {
+            return ar.find(elemento => elemento.codigo == codigo)
+        }
+
+        function ordenaNombre(ar) { 
+            ar.sort(ob1, ob2)
+        }
+        function ordenaPrecio(ar) {
+            return ar.sort((ob1, ob2) => ob1.precio-ob2.precio)
+         }
+        function filtra(minValores) { }
+        const arArticulo = [articulo1, articulo2, articulo3, articulo4, articulo5];
+        document.write(encuentra(arArticulo, 1).nombre)
+        console.log(ordenaPrecio(arArticulo))
+        console.log(ordenaNombre(arArticulo))
     </script>
 </body>
+
 </html>
