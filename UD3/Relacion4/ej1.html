@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+</head>
+<body>
+    <script>    
+        const sum = (num1, num2) => num1+num2;
+        document.write(sum(40, 2))
+
+        const stringLength = str => console.log(`the length of "${str}" is:`, str.length);
+        let longestCityNameInTheWorld = "Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu";
+        stringLength(longestCityNameInTheWorld);
+
+        const stringLength2 = str => {
+            let length = str.length;
+            console.log(`the length of "${str}" is:`, length)
+            return str.length
+        };
+        stringLength2("willynilly");
+
+        let alerts = ["Hey, you are awesome", "You are so wonderful", "What a marvel you are", "You're so lovely", "You're so sweet that I'd think you're a sweetotato -- and I LOOOOVE POTATOES"];
+
+        let showAlert = name => alert(alerts[(Math.floor(Math.random()*alerts.length))] + `, ${name}!`);
+
+        showAlert("you ball of fluff");
+
+    </script>
+</body>
+</html>
