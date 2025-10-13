@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio10</title>
+</head>
+
+<body>
+    <script>
+        const avion = [true, true, true, true, true, true, true, true, true, true];
+
+        function reservar() {
+            let clase = prompt("Elige una clase: \n1. First \n2. Turista ");
+            if (clase == "First") {
+                let asiento = avion.findIndex((libre, i) => libre  && i<5);
+                if (asiento != -1 ){
+                    avion[asiento] = false;
+                    imprimirTarjeta(asiento + 1, "First")
+                } else {
+                    alert ("No hay asientos disponibles en First");
+                }
+            } else if (clase == "Turista") {
+                let asiento = avion.findIndex((libre, i) => libre  && i>=5);
+                if (asiento != -1 ){
+                    avion[asiento] = false;
+                    imprimirTarjeta(asiento+1, "Turista")
+                } else {
+                    alert ("No hay asientos disponibles en Turista");
+                }
+            } else {
+                alert("Introduce una clase valida (First o Turista)")
+            }
+        }
+
+        function imprimirTarjeta(numAsiento, clase){
+            let nombre = prompt("Introduce tu nombre: ");
+            let ventana = window.open("", "Tarjeta", "width=300,height=200)");
+            ventana.document.write("<h3>Tarjeta de embarque</h3>");
+            ventana.document.write("<p>Nombre: " + nombre + "<p/>");
+            ventana.document.write("<p>Clae: " + clase + "</p>");
+            ventana.document.write("<p>Asiento: " + numAsiento + "</p>");
+        }
+        reservar();
+    </script>
+</body>
+
+</html>

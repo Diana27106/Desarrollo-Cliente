@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba</title>
+</head>
+
+<body>
+    <script src="function.js"></script>
+    <script>
+        const arClase = [
+            {
+                nombre: "Juan López",
+                edad: 18,
+                nota1: 5,
+                nota2: 6,
+                nota3: 8
+            },
+            {
+                nombre: "Angel Garcia",
+                edad: 20,
+                nota1: 6,
+                nota2: 7,
+                nota3: 10
+            },
+            {
+                nombre: "María Pérez",
+                edad: 22,
+                nota1: 8,
+                nota2: 8,
+                nota3: 10
+            }
+        ]
+
+        //EJERCICIO 1
+        document.write(arClase[0].nombre + "<br>")
+
+        //EJERCICIO 2
+        document.write(obtenerNota(1, 3) + "<br>");
+        document.write(obtenerNota(0) + "<br>");
+        document.write(obtenerNota(2, 1) + "<br>");
+
+        //EJERCICIO 3
+        document.write(edadMedia(arClase) + "<br>")
+
+        //EJERCICIO 4
+        document.write(alumnoAlazar(arClase) + "<br>")
+
+        //EJERCICIO 5
+        let arNumeros = paresImpares();
+        console.log(arNumeros);
+        const arOrdenado = arNumeros.sort((a, b) => {
+            if (a % 2 === 0 && b % 2 !== 0) { return -1 };
+            if (a % 2 !== 0 && b % 2 === 0) { return 1 };
+            return a - b;
+        })
+        console.log(arOrdenado);
+
+        //EJERCICIO 6
+        const arVendedores = [];
+        let semana = 200;
+        // document.write(darAlta());
+
+        //EJERCICIO 7
+        const arrayNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        document.write("<br>" + arrayToCero(arrayNum));
+        document.write("<br>" + arrayToString(arrayNum));
+        document.write("<br>" + arrayIncrementado(arrayNum));
+
+        //EJERCICIO 8
+        let contador = { 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0 };
+        // for (let i = 0; i < 36000; i++) {
+        //     let num = lanzarDado();
+        //     contador[num]++;
+        // }
+
+        // for (let suma in contador) {
+        //     document.write("Suma " + suma + ": " + contador[suma] + "<br>")
+        // }
+
+        //EJERCICIO 9
+        const tabla = [];
+        for (let i = 0; i < 6; i++) {
+            tabla[i] = [];
+            for (let j = 0; j < 6; j++) {
+                tabla[i][j] = 0;
+            }
+        }
+
+        for (let i = 0; i < 36000; i++) {
+            let dado1 = lanzarDado2();
+            let dado2 = lanzarDado2();
+            let suma = dado1 + dado2;
+
+            contador[suma]++;
+            tabla[dado1 - 1][dado2 - 1]++;
+        }
+        for (let suma in contador) {
+            document.write("Suma " + suma + ": " + contador[suma] + "<br>")
+        }
+
+
+        document.write("<table border='1' cellspacing='0'>");
+        document.write("<tr><th></th>");
+        for (let j = 1; j <= 6; j++) {
+            document.write("<th>Dado2 = " + j + "</th>");
+        }
+        document.write("</tr>");
+
+        for (let i = 0; i < 6; i++) {
+            document.write("<tr>");
+            document.write("<th>Dado1 = " + (i + 1) + "</th>");
+            for (let j = 0; j < 6; j++) {
+                document.write("<td>" + tabla[i][j] + "</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+
+        // EJERCICIO 10
+    </script>
+</body>
+
+</html>
