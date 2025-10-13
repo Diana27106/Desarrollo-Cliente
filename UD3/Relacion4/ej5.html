@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 3</title>
+    <title>Ejercicio 9</title>
 </head>
 <body>
     <script>
-        const arInt = [1, 5, 8, 3, 4];
-        const sum = ar => ar.reduce(c, el => c + el);
-        document.write(sum(arInt))
+        const fibonacci = n => {
+            if (n<3) return 1;
+            return fibonacci (n-1) + fibonacci(n-2);
+        }
     </script>
 </body>
 </html>
