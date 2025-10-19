@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Cliente {
+            constructor (nif, nombre, direccion, tlf, email){
+                this.nif = nif;
+                this.nombre = nombre;
+                this.direccion = direccion;
+                this.tlf = tlf;
+                this.email = email;
+            }
+        }
+
+        class Articulo {
+            constructor (cod, nombre, precio){
+                this.cod = cod;
+                this.nombre = nombre;
+                this.precio = precio;
+            }
+            get pvp(){
+                return this.precio * 1.21
+            }
+
+        }
+
+        class Albaran{
+            constructor(cliente, numAlbaran, fecha, lineas){
+                this.cliente = cliente;
+                this.numAlbaran = numAlbaran;
+                this.fecha = fecha;
+                this.lineas = lineas;
+            }
+            
+            show(){
+                let articulos = "";
+                for(let i=0; i<this.lineas.length; i++){
+                    articulos += this.lineas[i].nombre + " ";
+                }
+                document.write("<br>ALBARAN: Cliente: "+ this.cliente.nombre + " numAlbaran: " + this.numAlbaran + " fecha: " + this.fecha +" lineas: " + articulos) 
+            }
+
+            addArticulo(articulo){
+                this.lineas.push(articulo)
+            }
+
+            getTotal(){
+                let total = 0;
+                let pvp = 0;
+                for (let i=0; i<this.lineas.length; i++){
+                    pvp = this.lineas[i].pvp;
+                    total += pvp;
+                }
+                return total;
+            }
+        }
+        
+        
+
+        function inicializarAlbaran(numAlbaran, fecha){
+            const cliente1 = new Cliente("1234", "Pedro", "C/inventada nº2", "123456789", "pedro@email.com");
+            const articulo1 = new Articulo(201, "Pelota", 8);
+            const articulo2 = new Articulo(202, "Raqueta", 12);
+            const lineas = [articulo1, articulo2]
+            return new Albaran (cliente1, numAlbaran, fecha, lineas);
+        }
+
+        const articulo3 = new Articulo(203, "Patines", 100)
+        let albaran1 = inicializarAlbaran(123, "2025-10-25");
+        albaran1.addArticulo(articulo3);
+        document.write("El precio total es de: " + albaran1.getTotal());
+        albaran1.show(albaran1);
+    </script>
+</body>
+</html>

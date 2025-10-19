@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busqueda del tesoro</title>
+</head>
+<body>
+<script>
+    const mapa = [
+        [34, 21, 32, 41, 25],
+        [14, 42, 43, 14, 31],
+        [54, 45, 52, 42, 23],
+        [33, 15, 51, 31, 35],
+        [21, 52, 33, 13, 23]
+    ];
+
+
+
+function buscarTesoro(mapa){
+    let fila = 1;
+    let columna = 1;
+
+    while (true) {
+        const valor = mapa[fila - 1][columna - 1];
+        console.log(`(${fila},${columna}) -> ${valor}`);
+
+        if (valor == fila * 10 + columna) {
+            console.log(`¡Tesoro encontrado en (${fila},${columna})!`);
+            return [fila, columna];
+        }
+
+        fila = Math.floor(valor / 10);
+        columna = valor % 10;
+    }
+}
+    
+
+
+function crearMapaVacio(filas, columnas) {
+    let mapa = [];
+    for (let i = 0; i < filas; i++) {
+        mapa[i] = [];
+        for (let j = 0; j < columnas; j++) {
+            mapa[i][j] = 0;
+        }
+    }
+    return mapa;
+}
+
+function elegirTesoro(filas, columnas) {
+    return [
+        Math.floor(Math.random() * filas),  
+        Math.floor(Math.random() * columnas) 
+    ];
+}
+
+
+function crearCamino(filaInicio, colInicio, filaTesoro, colTesoro) {
+    let camino = [[filaInicio, colInicio]];
+    let fila = filaInicio;
+    let col = colInicio;
+
+    while (fila !== filaTesoro || col !== colTesoro) {
+        let siguienteFila = fila;
+        let siguienteCol = col;
+
+        if (fila < filaTesoro) siguienteFila++;
+        else if (fila > filaTesoro) siguienteFila--;
+
+        if (col < colTesoro) siguienteCol++;
+        else if (col > colTesoro) siguienteCol--;
+
+        camino.push([siguienteFila, siguienteCol]);
+        fila = siguienteFila;
+        col = siguienteCol;
+    }
+
+    return camino;
+}
+
+function rellenarMapaConCamino(mapa, camino) {
+    for (let i = 0; i < camino.length - 1; i++) {
+        let [fila, col] = camino[i];
+        let [sfila, scol] = camino[i + 1];
+        mapa[fila][col] = (sfila + 1) * 10 + (scol + 1); 
+    }
+
+    let [fila, col] = camino[camino.length - 1];
+    mapa[fila][col] = (fila + 1) * 10 + (col + 1);
+}
+
+function rellenarMapaAleatorio(mapa) {
+    let filas = mapa.length;
+    let columnas = mapa[0].length;
+
+    for (let i = 0; i < filas; i++) {
+        for (let j = 0; j < columnas; j++) {
+            if (mapa[i][j] === 0) {
+                let rf = Math.floor(Math.random() * filas) + 1;
+                let rc = Math.floor(Math.random() * columnas) + 1;
+                mapa[i][j] = rf * 10 + rc;
+            }
+        }
+    }
+}
+
+function crearMapa(filas, columnas) {
+    if (filas < 5 || columnas < 5) {
+        console.log("El mapa debe ser al menos 5x5");
+        return;
+    }
+
+    let mapa = crearMapaVacio(filas, columnas);
+    let [tesoroFila, tesoroCol] = elegirTesoro(filas, columnas);
+    let camino = crearCamino(0, 0, tesoroFila, tesoroCol); 
+    rellenarMapaConCamino(mapa, camino);
+    rellenarMapaAleatorio(mapa);
+
+    return mapa;
+}
+
+let mapaAleatorio = crearMapa(5, 5);
+console.table(mapaAleatorio);
+let tesoro = buscarTesoro(mapaAleatorio);
+console.log("Tesoro encontrado en:", tesoro);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <script>
+        let frase = "If man was meant to stay on the ground god would have given us roots";
+        let fraseSinEspacios = frase.replaceAll(" ", "");;
+        let caracteres = fraseSinEspacios.length;
+        let columnas = Math.ceil(Math.sqrt(caracteres));
+        let filas = Math.ceil(caracteres/columnas);
+        let contador = 0;
+        const arCodigo = [];
+
+        for (let i=0; i<filas; i++){
+            arCodigo[i] = [];
+            for (let j=0; j<columnas; j++){
+                arCodigo[i][j] = fraseSinEspacios[contador];
+                contador++;
+            }
+        }
+
+        let mensajeCodificado = "";
+        for (let i=0; i<columnas; i++){
+            for (let j=0; j<filas; j++){
+                mensajeCodificado += arCodigo[j][i];
+            }
+            mensajeCodificado += " ";
+        }
+        console.table(arCodigo);
+        console.log(mensajeCodificado)
+    </script>
+</body>
+</html>

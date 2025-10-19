@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+</head>
+<body>
+    <script src="script.js"></script>
+    <script>
+        //EJERCICIO 1
+        let obAlumno1 = {nombre: "Angel Garcia",
+                    edad: 20,
+                    nota1: 6,
+                    nota2:7,
+                    nota3: 10};
+        let obAlumno2 = {nombre: "Lucas Pérez",
+                    edad: 18,
+                    nota1: 6,
+                    nota2:4,
+                    nota3: 5};
+        let obAlumno3 = {nombre: "Ana López",
+                    edad: 22,
+                    nota1: 9,
+                    nota2:9,
+                    nota3: 9};
+        const arClase = [obAlumno1, obAlumno2, obAlumno3];
+        document.write(arClase[2].nombre + "<br>")
+
+        //EJERCICIO 2
+        document.write(buscarNota(2, 1) + "<br>" )
+
+        //EJERCICIO 3
+        document.write(edadMedia() + "<br>")
+
+        //EJERCICIO 4
+        document.write(elegirAl() + "<br>")
+
+        //EJERCICIO 5
+        document.write(paresImpares() + "<br>")
+        const arN = paresImpares();
+        const arOr = arN.sort(function (a, b) {
+            if (a%2 && b%2 !== 0) { return - 1};
+            if (a%2 && b%2  === 0) { return 1};
+            return a - b;
+        })
+        document.write(arOr + "<br>")
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <script>
+
+        let arNum = [5, 2, 8, 12, 18, 3, 17];
+        let max = arNum.reduce((a, b) => a>b ? a : b);
+        document.write(max + "<br>");
+
+        let arString = ["hola", "dos", "Luis", "murcielago", "avion", "acristalado" ];
+        let largo = arString.reduce((a, b) => a.length>b.length ? a : b);
+        document.write(largo + "<br>");
+
+        let pares = arNum.filter(num => num % 2 === 0);
+        document.write(pares  + "<br>");
+
+        let impares = arNum.filter(num => num % 2 !== 0);
+        document.write(impares  + "<br>");
+
+        let isContain = arString.filter(string => string.includes("is"));
+        document.write(isContain  + "<br>");
+
+        arDivisible = [3, 9, 21];
+        let divisibleTres = arDivisible.every(num => num % 3 === 0);
+        document.write(divisibleTres + "<br>");
+
+        let arConcatenado = arNum.concat(arDivisible);
+        document.write(arConcatenado  + "<br>");
+
+        let arOrdenado = arNum.sort((a, b) => a - b);
+        document.write(arOrdenado  + "<br>");
+
+        arString.shift();
+        document.write(arString + "<br>");
+
+        arString.unshift("lunes");
+        document.writeln(arString + "<br>");
+
+        arString.splice(2, 2, "Marta", "delfin");
+        document.write(arString);
+
+    </script>
+</body>
+</html>
