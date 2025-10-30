@@ -1,0 +1,59 @@
+{
+    "books": [
+        {
+            "id": 1,
+            "title": "El nombre del viento",
+            "author": "Patrick Rothfuss",
+            "year": 2007
+        },
+        {
+            "id": 2,
+            "title": "1984",
+            "author": "George Orwell",
+            "year": 1949
+        },
+        {
+            "id": 3,
+            "title": "El Hobbit",
+            "author": "J.R.R. Tolkien",
+            "year": 1937
+        }
+    ],
+    "members": [
+        {
+            "id": 1,
+            "name": "Laura",
+            "age": 25
+        },
+        {
+            "id": 2,
+            "name": "Carlos",
+            "age": 30
+        },
+        {
+            "id": 3,
+            "name": "Marta",
+            "age": 22
+        }
+    ],
+    "loans": [
+        {
+            "bookId": 1,
+            "memberId": 2,
+            "loanDate": "2024-01-10",
+            "returned": false
+        },
+        {
+            "bookId": 3,
+            "memberId": 1,
+            "loanDate": "2024-02-15",
+            "returned": false
+        },
+        {
+            "bookId": 2,
+            "memberId": 1,
+            "loanDate": "2023-02-15",
+            "returned": true
+        }
+    ]
+}
