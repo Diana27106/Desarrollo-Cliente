@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+div {
+    width: 700px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div div {
+    background-color: #eee;
+    margin: 0px;
+    width: 20px;
+    height: 20px;
+}
