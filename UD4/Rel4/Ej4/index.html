@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crowdrise Signup</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <script type="module" src="main.js"></script>
+    <div class="container">
+        <div class="left-panel">
+            <img src="https://previews.123rf.com/images/jossdiim/jossdiim1812/jossdiim181200060/126752058-cheerful-people-working-together-on-one-task-vector-illustration-brainstorming-and-business.jpg"
+                alt="Crowdrise illustration" />
+            <footer>© 2018 CrowdRise</footer>
+        </div>
+        <div class="right-panel">
+            <h1>Welcome to Crowdrise</h1>
+            <p>Let's get you all set up so you can verify your nonprofit and begin setting up your first campaign!</p>
+            <p class="login-text">Already have an account? <a href="#">Log in.</a></p>
+
+            <form>
+                <div class="row">
+                    <input type="text" placeholder="First Name" id="nombre" required />
+                    <input type="text" placeholder="Last Name" id="apellido" required />
+                </div>
+                <div class="row">
+                    <input type="number" placeholder="Phone" id="telefono" />
+                    <input type="email" placeholder="Email" id="email" required />
+                </div>
+                <div class="row">
+                    <input type="password" placeholder="Password" id="contraseña" required />
+                    <input type="password" placeholder="Confirm Password" id="contraseñaConf" required />
+                </div>
+
+                <div class="checkbox-row">
+                    <label><input type="checkbox" /> Yes, I want to receive Crowdrise's emails</label>
+                </div>
+                <div class="checkbox-row">
+                    <label>
+                        <input type="checkbox" required />
+                        I agree to the <a href="#">Terms</a>, <a href="#">Privacy Policy</a> and <a href="#">Fees</a>.
+                    </label>
+                </div>
+
+                <button type="submit">Sign Up</button>
+            </form>
+
+            <p class="footer-text">Don't work for a nonprofit? <a href="#">You can still fundraise for one.</a></p>
+
+        </div>
+    </div>
+</body>
+
+</html>

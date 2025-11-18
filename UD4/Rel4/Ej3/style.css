@@ -1,0 +1,75 @@
+/* Fondo general */
+body {
+  margin: 0;
+  padding: 0;
+  background: #e57373; /* rojo suave */
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Contenedor del formulario */
+.container {
+  text-align: center;
+  color: #ffe0e0;
+}
+
+/* Input */
+#username {
+  width: 250px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-bottom: 2px solid #ffe0e0;
+  background: transparent;
+  color: #ffe0e0;
+  font-size: 18px;
+  outline: none;
+  text-align: center;
+}
+
+/* Lista de requisitos */
+ul {
+  list-style: disc;
+  padding-left: 20px;
+  text-align: left;
+  margin: 10px auto;
+  width: 260px;
+}
+
+ul li {
+  margin: 6px 0;
+  opacity: 0.9;
+}
+
+/* Ocultar items cuando se cumple */
+.hidden {
+  display: none !important;
+}
+
+/* Botón */
+#submit {
+  margin-top: 15px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: not-allowed;
+  background: #f5a5a5; /* desactivado */
+  color: #ffffff;
+  opacity: 0.6;
+}
+
+/* Botón activo */
+#submit:enabled {
+  cursor: pointer;
+  background: #ffb3b3; /* más fuerte */
+  opacity: 1;
+  transition: 0.3s;
+}
+
+#submit:enabled:hover {
+  background: #ffc4c4;
+}

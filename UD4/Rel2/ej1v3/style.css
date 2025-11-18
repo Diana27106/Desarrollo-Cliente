@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== Tema normal ===== */
+body.normal {
+    background-color: lightyellow;
+    font-family: Arial, sans-serif;
+}
+
+body.normal main {
+    width: 80%;
+    float: right;
+}
+
+body.normal aside {
+    width: 18%;
+    float: left;
+    background-color: blue;
+    height: 100vh;
+}
+
+body.normal nav {
+    background-color: lightblue;
+    padding: 10px;
+    font-weight: bold;
+    font-family: sans-serif;
+    box-shadow: 2px 2px 5px darkblue;
+    margin: 20px 0;
+}
+
+body.normal nav a {
+    color: blue;
+    text-decoration: none;
+}
+
+body.normal nav a:hover {
+    color: darkblue;
+}
+
+body.normal h1 {
+    font-family: "Arial Black", sans-serif;
+}
+
+body.normal p {
+    line-height: 1.6;
+    padding: 10px;
+}
+
+body.normal #visible {
+    display: block;
+}
+
+/* ===== Tema minimalista ===== */
+body.minimalista {
+    background-color: white;
+    font-family: sans-serif;
+}
+
+body.minimalista nav {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+body.minimalista a {
+    color: black;
+    font-weight: normal;
+}
+
+body.minimalista aside {
+    background-color: transparent;
+    float: none;
+    width: auto;
+    height: auto;
+}
+
+body.minimalista main {
+    width: auto;
+    float: none;
+    padding: 10px;
+}
+
+body.minimalista #visible {
+    display: none;
+}

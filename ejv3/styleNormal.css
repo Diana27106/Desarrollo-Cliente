@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: lightyellow;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    width: 80%;
+    float: right;
+}
+
+aside {
+    width: 18%;
+    float: left;
+    background-color: blue;
+    height: 100vh;
+}
+
+nav {
+    background-color: lightblue;
+    padding: 10px;
+    font-weight: bold;
+    font-family: sans-serif;
+    box-shadow: 2px 2px 5px darkblue;
+    margin: 20px 0;
+}
+
+nav a {
+    color: blue;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: darkblue;
+}
+
+h1 {
+    font-family: 'Arial Black', sans-serif;
+}
+
+p {
+    line-height: 1.6;
+    padding: 10px;
+}
+
+#normal {
+    display: block;
+}

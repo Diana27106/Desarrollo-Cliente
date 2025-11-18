@@ -1,0 +1,111 @@
+/* Variables para colores */
+:root {
+  --primary-blue: #2c63ed;
+  --light-blue: #a0c2f8;
+  --input-bg: #ffffff;
+  --text-color: #333;
+  --border-color: #ddd;
+  --box-shadow-light: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8; /* Color de fondo ligero */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* --- Contenedor Principal del Formulario --- */
+.container {
+  background-color: var(--input-bg);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px var(--box-shadow-light), 0 0 5px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 400px; /* Ajusta el ancho según la imagen */
+  box-sizing: border-box;
+  /* Efecto de borde suave y ligero del fondo */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* --- Estilos del Formulario --- */
+.card-form label {
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.card-form input,
+.card-form select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 15px;
+  color: var(--text-color);
+  background-color: #f7f7f7; /* Un fondo ligeramente gris para los inputs */
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.card-form input:focus,
+.card-form select:focus {
+  border-color: var(--primary-blue);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--light-blue);
+  background-color: var(--input-bg);
+}
+
+/* Fila para fecha y CVV */
+.row {
+  display: flex;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.col {
+  flex: 1;
+}
+
+.select-group {
+  display: flex;
+  gap: 10px;
+}
+
+.select-group select {
+  width: 50%; /* Dos selects en la columna */
+  padding: 10px 5px; /* Ajuste para que 'Month' y 'Year' no se vean cortados */
+}
+
+.cvc-col {
+  flex: 0.5; /* Hace la columna del CVV más estrecha */
+}
+
+/* Botón de Submit */
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  margin-top: 30px;
+  background-color: var(--primary-blue);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+  box-shadow: 0 4px 10px rgba(44, 99, 237, 0.4);
+}
+
+.submit-btn:hover {
+  background-color: #2155c5;
+}
+
+.submit-btn:active {
+  transform: translateY(1px);
+}
