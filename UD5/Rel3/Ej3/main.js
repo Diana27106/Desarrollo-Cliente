@@ -17,7 +17,13 @@ function dibujarTablero() {
         if (valor === "") {
             celda.classList.add("vacio");
         } else {
-            celda.textContent = valor;
+            // Valor = 1..15 → posición del trozo
+            const x = ((valor - 1) % 4) * -100;
+            const y = Math.floor((valor - 1) / 4) * -100;
+
+            celda.style.backgroundImage = "url('img/images.jpg')";
+            celda.style.backgroundPosition = `${x}px ${y}px`;
+
             celda.addEventListener("click", () => mover(index));
         }
 

@@ -7,15 +7,12 @@
 }
 
 .celda {
-  background: #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  background-size: 400px 400px; /* mismo tamaño que #tablero */
+  background-repeat: no-repeat;
 }
 
 .vacio {
   background: white;
-  cursor: default;
 }
