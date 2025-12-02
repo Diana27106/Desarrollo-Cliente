@@ -8,11 +8,15 @@ const card = (objeto) => {
     let estado = document.createElement('p');
     let nombre = document.createElement('p');
     let img = document.createElement('img');
+    let btn = document.createElement("button");
 
     genero.textContent = `Gender: ${objeto.gender}`;
     estado.textContent = `Status: ${objeto.status}`;
     nombre.textContent = objeto.name;
     img.src = objeto.image;
+    btn.textContent = "Comprar";
+    btn.className = "btnCompras"
+    btn.id = `bt${objeto.id}`
 
     tarjeta.id = objeto.id;
     tarjeta.className = 'articulo';
@@ -21,9 +25,32 @@ const card = (objeto) => {
     tarjeta.appendChild(genero);
     tarjeta.appendChild(estado);
     tarjeta.appendChild(img);
+    tarjeta.appendChild(btn);
 
     return tarjeta;
 };
+
+const asociaEventos = () => {
+    tarjetas = document.querySelectorAll(".articulo");
+    for (let i = 0; i < tarjetas.length; i++) {
+        tarjetas[i].addEventListener("click", () => {
+            // console.log(tarjetas[i].id)
+            getInfo(tarjetas[i].id)
+        })
+    };
+    const nodBotones = document.querySelectorAll(".btnCompras");
+    for (let i = 0; i < nodBotones.length; i++) {
+        nodBotones[i].addEventListener("click", function (event) {
+            // console.log(tarjetas[i].id)
+            alert("Comprando " + event.target.id);
+        })
+    }
+
+}
+
+
+
+
 
 const cards = (arObjetos) => {
     const contenedor = document.getElementById("contenedorDatos");
@@ -33,15 +60,9 @@ const cards = (arObjetos) => {
         contenedor.appendChild(tarjeta);
     }
 
-    tarjetas = document.querySelectorAll(".articulo");
-    for (let i = 0; i < tarjetas.length; i++) {
-        tarjetas[i].addEventListener("click", () => {
-
-            console.log(tarjetas[i].id)
-            getInfo(tarjetas[i].id)
-        })
-    };
+    asociaEventos();
 }
+
 
 const cardInfo = (card) => {
     document.getElementById("descripcion").innerHTML = "";
