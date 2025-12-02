@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: salmon;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    margin: 20px;
+    font-size: 4rem;
+}
+
+h2 {
+    margin: 20px;
+    font-size: 3rem;
+}
+
+p {
+    margin: 20px;
+    font-size: 2rem;
+}
+
+.alphabet {
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap
+}
+
+.alphabet p {
+    background-color: white;
+    color: salmon;
+    line-height: 50px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.espacios {
+    display: flex;
+}

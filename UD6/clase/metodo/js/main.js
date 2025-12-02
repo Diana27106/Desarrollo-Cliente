@@ -89,9 +89,6 @@ const mostrarArticulos = () => {
 }
 function main() {
     document.getElementById('cargaDatos').addEventListener('click', mostrarArticulos);
-
-
-
 }
 
 document.addEventListener("DOMContentLoaded", main());
