@@ -1,52 +1,136 @@
+/* ======================================= */
+/* 1. Estilos Generales           */
+/* ======================================= */
+:root {
+  /* Paleta de Colores */
+  --color-principal: #3498db; /* Azul Elegante */
+  --color-fondo: #ecf0f1; /* Gris Claro Suave */
+  --color-texto: #2c3e50; /* Gris Oscuro para el texto */
+  --color-cubierta: #34495e; /* Azul Oscuro para el reverso */
+
+  /* Dimensiones y Espaciado */
+  --ancho-carta: 120px;
+  --alto-carta: 160px;
+  --separacion: 15px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  min-height: 100vh;
 }
 
+h1 {
+  color: var(--color-principal);
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 2.2em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+p {
+  margin-bottom: 30px;
+  font-style: italic;
+  color: #7f8c8d;
+}
+
+/* ======================================= */
+/* 2. Contenedor de Cartas        */
+/* ======================================= */
 .contenedor {
-  width: 600px;
-  margin: 20px auto;
+  /* El juego tiene 10 cartas (5 parejas). Usaremos un grid 5x2. */
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(5, var(--ancho-carta));
+  grid-template-rows: repeat(2, var(--alto-carta));
+  gap: var(--separacion);
+  padding: var(--separacion);
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
+/* ======================================= */
+/* 3. Estilo de la Carta         */
+/* ======================================= */
 .carta {
-  width: 100px;
-  height: 100px;
+  /* Propiedades de Contenedor 3D */
+  width: var(--ancho-carta);
+  height: var(--alto-carta);
   position: relative;
+  transform-style: preserve-3d; /* Esencial para el efecto 3D */
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transición elástica y rápida */
   cursor: pointer;
-  perspective: 600px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.carta .frente,
-.carta .atras {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  backface-visibility: hidden;
-  border-radius: 10px;
+/* Efecto al pasar el ratón antes de girar */
+.carta:not(.activa):hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px); /* Pequeño levantamiento */
 }
 
-.carta .frente img {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-}
-
-.carta .atras {
-  background: #888;
-}
-
-.carta:not(.activa) .frente {
+/* Estado de la carta girada */
+.carta.activa {
   transform: rotateY(180deg);
+  pointer-events: none; /* Desactiva clics en cartas ya activas */
 }
 
-.carta.activa .atras {
-  transform: rotateY(180deg);
-}
-
+/* --- Frente y Reverso (Caras de la Carta) --- */
 .frente,
 .atras {
-  transition: transform 0.4s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  /* Ocultar la cara opuesta que no está mirando al usuario */
+  backface-visibility: hidden;
+
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Reverso (Cubierta) */
+.atras {
+  background-color: var(--color-cubierta);
+  border: 3px solid var(--color-principal); /* Borde de color principal */
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.1) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 20px 20px; /* Textura sutil */
+}
+
+/* Frente (Imagen) */
+.frente {
+  background-color: #ffffff;
+  transform: rotateY(180deg); /* Inicialmente girada para que no se vea */
+  padding: 5px; /* Pequeño marco para la imagen */
+}
+
+/* Estilo de la imagen dentro del frente */
+.frente img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen cubra el espacio */
+  border-radius: 4px;
 }

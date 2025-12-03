@@ -1,51 +1,147 @@
+/* ======================================= */
+/* 1. Variables y Estilos Generales        */
+/* ======================================= */
+:root {
+  /* Paleta de Colores */
+  --color-fondo: #1e1e2f; /* Fondo Oscuro Profundo */
+  --color-principal: #6c5ce7; /* Morado Vibrante (Accent) */
+  --color-secundario: #a29bfe; /* Lila Claro */
+  --color-texto: #f5f6fa; /* Blanco Roto */
+  --color-error: #ff7675; /* Rojo para errores/letras fallidas */
+  --color-acierto: #55efc4; /* Verde para aciertos */
+}
+
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: sans-serif;
-    background-color: salmon;
-    color: white;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  font-family: "Arial", sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
 }
 
 h1 {
-    margin: 20px;
-    font-size: 4rem;
+  color: var(--color-principal);
+  margin-bottom: 5px;
+  font-size: 3em;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 h2 {
-    margin: 20px;
-    font-size: 3rem;
+  color: var(--color-secundario);
+  font-size: 1.2em;
+  margin-bottom: 20px;
 }
 
 p {
-    margin: 20px;
-    font-size: 2rem;
+  margin-bottom: 25px;
+  color: #b2bec3;
 }
 
+/* ======================================= */
+/* 2. Sección de Vidas y Palabra           */
+/* ======================================= */
+
+/* Estilo para el contenedor de Vidas */
+.vidas {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: var(--color-secundario);
+  margin: 20px 0;
+  padding: 10px 20px;
+  border: 2px solid var(--color-secundario);
+  border-radius: 5px;
+}
+
+/* Estilo para los espacios de la palabra */
+.espacios {
+  display: flex;
+  gap: 15px;
+  margin: 40px 0;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.espacios p {
+  /* Estilo para el guion bajo o la letra revelada */
+  margin: 0;
+  padding: 5px;
+  border-bottom: 4px solid var(--color-texto);
+  min-width: 30px;
+  text-align: center;
+  color: var(--color-texto);
+  transition: color 0.3s ease;
+}
+
+/* ======================================= */
+/* 3. Teclado Alfabético (Alphabet)        */
+/* ======================================= */
 .alphabet {
-    max-width: 1200px;
-    display: flex;
-    flex-wrap: wrap
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%;
+  max-width: 700px;
+  gap: 10px;
+  padding: 20px;
+  background-color: #2c3a47; /* Un fondo ligeramente diferente para el teclado */
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .alphabet p {
-    background-color: white;
-    color: salmon;
-    line-height: 50px;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    cursor: pointer;
+  /* Cada letra (botón) */
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--color-principal);
+  color: var(--color-texto);
+  font-size: 1.2em;
+  font-weight: 600;
+
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none; /* Evitar selección de texto */
+  transition: all 0.2s ease-in-out;
 }
 
-.espacios {
-    display: flex;
+/* Efecto Hover para las letras disponibles */
+.alphabet p:hover {
+  background-color: var(--color-secundario);
+  color: var(--color-fondo);
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
+/* Estilo para letras ya seleccionadas (JS añade 'pointer-events: none;' y 'opacity: 0.3;') */
+.alphabet p[style*="pointer-events: none"] {
+  background-color: var(--color-fondo); /* Fondo oscuro */
+  color: var(--color-error); /* Podrías cambiar el color si fue un fallo */
+  border: 1px solid var(--color-error);
+  opacity: 0.6 !important; /* Asegurar que la opacidad del JS no lo oculte demasiado */
+  cursor: default;
+  transform: none; /* Eliminar efecto de escala */
+}
+
+/* Opcional: Estilo más distintivo para letras que fueron acierto (requiere añadir una clase en main.js) */
+/*
+.alphabet p.acierto {
+    background-color: var(--color-acierto);
+    color: var(--color-fondo);
+    border: none;
+}
+*/
