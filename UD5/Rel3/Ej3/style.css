@@ -1,18 +1,84 @@
-#tablero {
-  width: 320px;
-  height: 320px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 5px;
+/* style.css - Versión mejorada */
+
+/* --- Estilos Generales --- */
+body {
+  font-family: "Verdana", sans-serif; /* Tipografía más limpia */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #eaf1f7; /* Fondo azul claro muy suave */
+  color: #2c3e50; /* Gris oscuro elegante */
+  margin: 40px 0;
 }
 
+h1 {
+  color: #3498db; /* Azul vibrante */
+  margin-bottom: 40px;
+  font-size: 2.5em;
+  font-weight: 300; /* Fuente más ligera */
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Estilo del Contenedor del Tablero --- */
+#tablero {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px);
+
+  width: 400px;
+  height: 400px;
+
+  /* Borde sutil y sombra elegante */
+  border: none;
+  border-radius: 8px; /* Bordes redondeados */
+  overflow: hidden; /* Importante para que las celdas no se salgan del borde redondeado */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 6px 6px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff; /* Fondo blanco dentro del tablero */
+}
+
+/* --- Estilo de las Celdas/Piezas --- */
 .celda {
   width: 100px;
   height: 100px;
-  background-size: 400px 400px; /* mismo tamaño que #tablero */
+
+  background-size: 400px 400px;
   background-repeat: no-repeat;
+
+  /* Bordes internos más sutiles */
+  border: 1px solid #ffffff; /* Borde blanco para separación visual (como si fuera un margen) */
+  box-sizing: border-box;
+  cursor: pointer;
+
+  /* Transición suave para el efecto hover y (si se añade animación) el movimiento */
+  transition: all 0.2s ease-out;
+
+  /* Estilo adicional si la imagen de fondo falla, para ver qué celda es */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
+/* Efecto hover atractivo */
+.celda:not(.vacio):hover {
+  box-shadow: inset 0 0 15px rgba(52, 152, 219, 0.6); /* Sombra interna azul */
+  transform: scale(1.03); /* Ligeramente más grande al pasar el ratón */
+  z-index: 10; /* Asegura que la celda activa esté por encima */
+}
+
+/* --- Estilo de la Celda Vacía --- */
 .vacio {
-  background: white;
+  background-image: none !important;
+  background-color: #ecf0f1; /* Gris claro muy suave */
+  cursor: default;
+  border: 1px solid #ecf0f1; /* Borde del mismo color */
+}
+
+/* Eliminar efectos de hover en la celda vacía */
+.vacio:hover {
+  box-shadow: none;
+  transform: none;
 }
